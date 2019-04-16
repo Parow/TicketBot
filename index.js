@@ -49,7 +49,6 @@ client.on("message", async message => {
       if (message.channel.name.indexOf('ticket') > -1 && command != "close") {
           var ret = message.channel.name.replace('ticket-', '');
 
-          console.log(ret)
           var pq = client.users.get(ret)
           const embed = new RichEmbed()
               .setColor(0xCF40FA)
@@ -62,8 +61,6 @@ client.on("message", async message => {
       } else {
           if (command == "close" && message.channel.name.indexOf('ticket') > -1) {
               var ret = message.channel.name.replace('ticket-', '');
-
-              console.log(ret)
               var pq = client.users.get(ret)
               const embed = new RichEmbed()
                   .setColor(0xCF40FA)
@@ -78,14 +75,9 @@ client.on("message", async message => {
       }
   }
   if (message.channel.type === "dm") {
-    console.log(message.author.id)
-      
-      console.log(server.channels.exists("name", "ticket-" + message.author.id))
       if (server.channels.exists("name", "ticket-" + message.author.id)) return SendMessageTicket(message);
       server.createChannel(`ticket-${message.author.id}`, "text").then(c => {
-        console.log(config.ModeratorRoles[1])
           for (i = 0; i < config.ModeratorRoles.length; i++) {
-            //console.log(config.ModeratorRoles[i])
               var role1 = client.guilds.get(config.serverID).roles.find("name", config.ModeratorRoles[i]);
               c.overwritePermissions(role1, {
                   SEND_MESSAGES: true,
@@ -93,7 +85,6 @@ client.on("message", async message => {
               });
           }
           let role2 = client.guilds.get(config.serverID).roles.find("name", "@everyone");
-          console.log(role2.id)
           c.overwritePermissions(role2, {
               SEND_MESSAGES: false,
               READ_MESSAGES: false
