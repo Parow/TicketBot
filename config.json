@@ -1,0 +1,6 @@
+{ 
+    "token"  : "000000000000000000",
+    "prefix" : "!",
+    "serverID" : "00000000000000000",
+    "ModeratorRoles" : ["Admin","Dev"]
+}
