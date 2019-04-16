@@ -6,8 +6,8 @@ A support discord.js bot
 
 Discord.js
 Some discord perm : 
-  -Manage channel
-  -Manage roles
+  - Manage channel
+  - Manage roles
 ## Usage
 
   - !close in the channel of the ticket
