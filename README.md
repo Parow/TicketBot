@@ -5,6 +5,13 @@ A support discord.js bot
 ## Required
 
 Discord.js
+Some discord perm : 
+  -Manage channel
+  -Manage roles
+## Usage
+
+  - !close in the channel of the ticket
+  - PM the bot and it's going to create a channel with the message
 
 ## Config
 
